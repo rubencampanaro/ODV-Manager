@@ -76,8 +76,7 @@ function campoObbligatorio($codice) {
   if(isSet($_POST['salva']))
   {
     $verificato = true;
-    $query1 = "INSERT INTO volontari_azioni (volontario, tabella, azione_volontariato, data_inizio, data_fine, ora_inizio,ora_fine)
-    VALUES ('".$_SESSION['codice']."', '".$_SESSION['tabella']."', '".$_POST['azione_volontariato']."', '".$_POST['data_inizio']."', '".$_POST['data_fine']."', '".$_POST['ora_inizio']."', '".$_POST['ora_fine']."');";
+    $query1 = "INSERT INTO volontari_azioni VALUES (0, '".$_SESSION['codice']."', '".$_SESSION['tabella']."', '".$_POST['azione_volontariato']."', '".$_POST['data_inizio']."', '".$_POST['data_fine']."', '".$_POST['ora_inizio']."', '".$_POST['ora_fine']."');";
     $query2 = "INSERT INTO volontari_azioni_dettagli VALUES";
     $campi = campoObbligatorio($_POST['azione_volontariato']);
     foreach ($_POST as $campo => $valore) {
@@ -88,7 +87,7 @@ function campoObbligatorio($codice) {
           $verificato = false;
           break;
         }
-        if (!empty($valore))
+        if (!empty($valore) && in_array($campo, $campi))
         $query2 .= " (LAST_INSERT_ID(), '$campo', '$valore'),";
       }
     }
