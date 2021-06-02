@@ -79,60 +79,62 @@ if(isSet($_POST['login']))
   <main class="login">
     <form action="#" method="post">
       <div class="text-center">
-        <img class="mb-3 rounded" src="./img/logo.png" alt="" width="80" height="80">
-        <h1 class="fw-bold">Login</h1>
-      </div>
-      <?php
-      if (isSet($codice_errore) && $codice_errore != 0)
-      {
-        $errore= '<div class="container mt-4 p-0">
-        <div class="alert alert-danger alert-dismissible fade show m-0" role="alert">';
-        switch ($codice_errore) {
-          case 1:
-          $errore.= "<b>Attenzione</b> - Credenziali errate";
-          break;
-          case 2:
-          $errore.= "<b>Attenzione</b> - Nessun utente trovato";
-          break;
-          case 3:
-          $errore.= "<b>Errore</b> - Credenziali mancanti";
-          break;
-          default:
-          break;
+        <img class="mb-4 rounded" src="./img/logo.png" alt="" width="120" height="68">
+        <h1>ODV Manager</h1>
+        <hr />
+        <h3 class="fw-bold">Login</h1>
+        </div>
+        <?php
+        if (isSet($codice_errore) && $codice_errore != 0)
+        {
+          $errore= '<div class="container mt-4 p-0">
+          <div class="alert alert-danger alert-dismissible fade show m-0" role="alert">';
+          switch ($codice_errore) {
+            case 1:
+            $errore.= "<b>Attenzione</b> - Credenziali errate";
+            break;
+            case 2:
+            $errore.= "<b>Attenzione</b> - Nessun utente trovato";
+            break;
+            case 3:
+            $errore.= "<b>Errore</b> - Credenziali mancanti";
+            break;
+            default:
+            break;
+          }
+          $errore.= '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+          </div>';
+          echo $errore;
         }
-        $errore.= '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-        </div>';
-        echo $errore;
-      }
-      ?>
-      <div class="my-4">
-        <div class="mb-3">
-          <label class="fw-bold" for="email">E-mail:</label>
-          <input type="email" name="email" id="email" class="form-control" required />
-        </div>
-        <div class="mb-3">
-          <label class="fw-bold" for="password">Password:</label>
-          <input type="password" name="password" id="password" class="form-control" required />
-        </div>
-        <div class="mb-3">
-          <label class="fw-bold">Tipologia accesso:</label>
-          <div>
-            <div class="form-check form-check-inline">
-              <input type="radio" name="tipo" id="amm" class="form-check-input" value="amministrazione" required />
-              <label class="form-check-label" for="amm">Amministrazione</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input type="radio" name="tipo" id="vol" class="form-check-input" value="volontari" required />
-              <label class="form-check-label" for="vol">Volontario</label>
+        ?>
+        <div class="my-4">
+          <div class="mb-3">
+            <label class="fw-bold" for="email">E-mail:</label>
+            <input type="email" name="email" id="email" class="form-control" required />
+          </div>
+          <div class="mb-3">
+            <label class="fw-bold" for="password">Password:</label>
+            <input type="password" name="password" id="password" class="form-control" required />
+          </div>
+          <div class="mb-3">
+            <label class="fw-bold">Tipologia accesso:</label>
+            <div>
+              <div class="form-check form-check-inline">
+                <input type="radio" name="tipo" id="amm" class="form-check-input" value="amministrazione" required />
+                <label class="form-check-label" for="amm">Amministrazione</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input type="radio" name="tipo" id="vol" class="form-check-input" value="volontari" required />
+                <label class="form-check-label" for="vol">Volontario</label>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <input type="submit" name="login" class="w-100 btn btn-lg btn-primary mb-3" value="Login" />
-      <input type="reset" name="reset" class="w-100 btn btn-lg btn-secondary" value="Reset" />
-    </form>
-  </main>
-  <script src="./scripts/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+        <input type="submit" name="login" class="w-100 btn btn-lg btn-primary mb-3" value="Login" />
+        <input type="reset" name="reset" class="w-100 btn btn-lg btn-secondary" value="Reset" />
+      </form>
+    </main>
+    <script src="./scripts/bootstrap.bundle.min.js"></script>
+  </body>
+  </html>
