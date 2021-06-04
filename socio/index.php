@@ -20,7 +20,7 @@ require_once "./session.php";
     </div>
   </div>
   <div class="container my-5 p-4 bg-white rounded shadow">
-    <h2 class="mb-4 fw-bold">Volontari:</h2>
+    <h2 class="mb-4 fw-bold">Gestione Volontari:</h2>
     <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 g-4">
       <div class="col">
         <div class="card bg-primary mb-3">
