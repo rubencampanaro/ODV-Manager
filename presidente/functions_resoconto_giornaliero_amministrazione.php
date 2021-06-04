@@ -123,7 +123,7 @@ if(isSet($_POST['opzione']) && isSet($_POST['dati']))
         $campo = ucfirst($campo);
         $output.="<div class='col'>
         <label class='fw-bold'>$campo</label>
-        <input type='text' class='form-control mb-1' name='$campo' readonly value='$valore' />
+        <input type='text' class='form-control mb-1' name='$campo' readonly value=\"$valore\" />
         </div>";
       }
       mysqli_free_result($risultato);
@@ -138,7 +138,7 @@ if(isSet($_POST['opzione']) && isSet($_POST['dati']))
         $campo = ucfirst($campo);
         $output.="<div class='col'>
         <label class='fw-bold'>$campo</label>
-        <input type='text' class='form-control mb-1' name='$campo' readonly value='$valore' />
+        <input type='text' class='form-control mb-1' name='$campo' readonly value=\"$valore\" />
         </div>";
       }
       $output.="</div>";

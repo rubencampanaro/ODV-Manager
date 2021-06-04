@@ -37,7 +37,7 @@ if(isSet($_POST['opzione']) && isSet($_POST['codice_utente']))
         $campo = ucfirst($campo);
         $output.="<div class='col'>
         <label class='fw-bold'>$campo</label>
-        <input type='text' class='form-control mb-1' name='$campo' readonly value='$valore' />
+        <input type='text' class='form-control mb-1' name='$campo' readonly value=\"$valore\" />
         </div>";
       }
     }
