@@ -31,7 +31,7 @@ function randomPassword() {
     $pass[] = $alphabet[$n];
   }
   $password = implode($pass);
-  return password_hash($password, PASSWORD_DEFAULT);
+  return $password."|".password_hash($password, PASSWORD_DEFAULT);
 }
 
 function sendEmail($to, $subject, $message) {
