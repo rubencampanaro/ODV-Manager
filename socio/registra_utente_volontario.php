@@ -33,7 +33,7 @@ function formExtra() {
     $valore = str_replace('_', ' ', $riga['campo']);
     $valore = ucfirst($valore);
     $output .= "\n<div class='col'><label class='fw-bold' for='".$riga['campo']."'>$valore</label>
-    <input type='text' class='form-control' name='".$riga['campo']."' id='".$riga['campo']."' placeholder='inserisci' /></div>";
+    <input type='text' class='form-control' required name='".$riga['campo']."' id='".$riga['campo']."' placeholder='inserisci' /></div>";
   }
   mysqli_free_result($risultato);
   return $output;
@@ -92,17 +92,19 @@ function campoObbligatorio() {
         if ($verificato)
         {
         $insert .= "password)\n";
-        $password = randomPassword();
-        $values .= "'".$password."');";
+        $randPass = explode('|', randomPassword());
+        $password = $randPass[0];
+        $hash = $randPass[1];
+        $values .= "'".$hash."');";
         $query = $insert . $values;
         if (connectDB($query))
         {
           $email=$_POST['email'];
           $subject="Registrazione Account - ODV";
-          $message="Dati autenticazione | Account ODV\n
-          \nUtente volontario - Ruolo: <i>".$_POST['ruolo']."</i>
-          \nEmail: <b>$email</b>
-          \nPassword: <b>$password</b>";
+          $message="Dati autenticazione | Account ODV<br><br>
+          <i>Utente volontario</i><br>
+          Email: <b>$email</b><br>
+          Password: <b>$password</b><br>";
           sendEmail($email, $subject, $message);
           echo '<div class="container mt-4">
           <div class="alert alert-success alert-dismissible fade show m-0" role="alert">
@@ -191,7 +193,7 @@ function campoObbligatorio() {
           </div>
           <div class="col">
             <label class="fw-bold" for='note'>Note</label>
-            <input type='text' class="form-control" name='note' id='note' required placeholder='inserisci' />
+            <input type='text' class="form-control" name='note' id='note' placeholder='inserisci' />
           </div>
           <div class="col">
             <label class="fw-bold" for='tessera'>Tessera</label>
