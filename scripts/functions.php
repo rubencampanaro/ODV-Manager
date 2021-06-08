@@ -36,7 +36,7 @@ function randomPassword() {
 
 function sendEmail($to, $subject, $message) {
   $from = 'odv@example.com';
-  $body="<html><body><h1>ODV</h1><br><p>".$message."</p></body></html>";
+  $body="<html><body><h1>ODV</h1><p>".$message."</p></body></html>";
   $headers = "MIME-Version: 1.0\r\nContent-Type: text/html; charset=UTF-8\r\nFrom:".$from;
   return mail($to,$subject,$body,$headers);
 }
