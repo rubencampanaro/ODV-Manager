@@ -2,7 +2,9 @@
 
 ODV-Manager is a web application for the management of a generic volunteer organization with the ability of dynamic customization based on the requirements.
 
-> [_Live demo_](http://worksofrc.altervista.org/works/ODV-Manager).
+> UI Language: Italian
+
+> [_Live demo_](http://worksofrc.altervista.org/works/ODV-Manager)
 
 ## Screenshots
 
