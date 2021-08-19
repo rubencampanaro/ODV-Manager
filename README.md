@@ -4,7 +4,7 @@ ODV-Manager is a web application for the management of a generic volunteer organ
 
 > __UI Language:__ _Italian_
 
-> [_Live demo_](http://worksofrc.altervista.org/works/ODV-Manager)
+> [___Live demo___](http://worksofrc.altervista.org/works/ODV-Manager)
 
 ## Screenshots
 
