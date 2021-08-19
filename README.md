@@ -32,4 +32,4 @@ ODV-Manager is a web application for the management of a generic volunteer organ
 
 ![Record action](./img/screenshots/record_action.jpeg)
 
-and more...
+_and more..._
